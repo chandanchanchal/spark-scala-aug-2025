@@ -10,3 +10,5 @@ rdd.foreach(println)
 
 val rdd1 = rdd.flatMap(f=>f.split(" "))
 rdd1.foreach(println)
+val result = rdd1.map(f =>(f,1))
+result.foreach(println)
