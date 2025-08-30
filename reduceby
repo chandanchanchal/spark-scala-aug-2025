@@ -1,0 +1,4 @@
+ val listRdd = spark.sparkContext.parallelize(List(1,2,3,4,5,3,2))
+  println("output min using binary : "+listRdd.reduce(_ min _))
+  println("output max using binary : "+listRdd.reduce(_ max _))
+  println("output sum using binary : "+listRdd.reduce(_ + _))
