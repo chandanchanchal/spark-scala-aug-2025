@@ -1,0 +1,10 @@
+ val data = Seq(("Project","A", 1),
+    ("Gutenberg’s", "X",3),
+    ("Alice’s", "C",5),
+    ("Adventures","B", 1)
+  )
+  val rdd=spark.sparkContext.parallelize(data)
+   val rdd3= rdd2.sortByKey()
+ rdd3.foreach(println)
+
+  
