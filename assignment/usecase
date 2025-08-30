@@ -1,0 +1,20 @@
+🔹 1. Filter employees by department (HR only)
+🔹 2. Filter employees with salary > 6000
+🔹 3. Map to extract employee names only
+🔹 4. Map to convert (name, salary) pairs
+🔹 5. FlatMap to split names into characters
+🔹 6. FlatMap to create word list from department names
+🔹 7. Reduce to find total salary of all employees
+🔹 8. Reduce to find max salary
+🔹 9. Fold to find total salary (with initial 0)
+🔹 10. Fold to find max salary (with initial 0)
+🔹 11. Aggregate to compute (sum, count) for average salary
+🔹 12. Aggregate to compute (maxAge, minAge)
+🔹 13. Key-value RDD: (department, salary)
+🔹 14. reduceByKey to compute total salary by department
+🔹 15. reduceByKey to find max salary by department
+🔹 16. Count employees in each department (map + reduceByKey)
+🔹 17. Average salary by department (combine reduceByKey results)
+🔹 18. sortByKey to sort department totals alphabetically
+🔹 19. sortByKey to sort by department descending
+🔹 20. sort employees by salary (not by key, but full sort)
