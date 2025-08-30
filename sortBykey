@@ -4,7 +4,11 @@
     ("Adventures","B", 1)
   )
   val rdd=spark.sparkContext.parallelize(data)
-   val rdd3= rdd2.sortByKey()
- rdd3.foreach(println)
+  rdd.foreach(println)
+  val rdd2=rdd.map(f=>{(f._2, (f._1,f._2,f._3))})
+  rdd2.foreach(println)
+  val rdd3= rdd2.sortByKey()
+  rdd2.foreach(println)
+}
 
   
