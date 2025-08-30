@@ -13,3 +13,6 @@
   "Gutenberg’s")
 
   val rdd=spark.sparkContext.parallelize(data)
+
+val result = rdd.map(f =>(f,1))
+result.foreach(println)
