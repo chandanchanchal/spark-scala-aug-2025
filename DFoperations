@@ -1,3 +1,9 @@
+// Additional Imports
+import org.apache.spark.sql.types.ArrayType
+import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import org.apache.spark.sql.Row
+import spark.implicits._
+
 val arrayStructureData = Seq(
     Row(Row("James","","Smith"),List("Java","Scala","C++"),"OH","M"),
     Row(Row("Anna","Rose",""),List("Spark","Java","C++"),"NY","F"),
