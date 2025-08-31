@@ -30,5 +30,11 @@ val model = new LogisticRegressionWithLBFGS()
   .setNumClasses(2)
   .run(training)
 
+val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
+  val prediction = model.predict(features)
+  (prediction, label)
+}
+
+
 
 
