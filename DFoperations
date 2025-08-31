@@ -22,6 +22,10 @@ val arrayStructureData = Seq(
     .add("state", StringType)
     .add("gender", StringType)
 
+// create DF
+val rdd = spark.sparkContext.parallelize(arrayStructureData)
+val df = spark.createDataFrame(rdd, arrayStructureSchema)
+
   val df = spark.createDataFrame(
     spark.sparkContext.parallelize(arrayStructureData),arrayStructureSchema)
   df.printSchema()
