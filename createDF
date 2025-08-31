@@ -20,6 +20,7 @@ dfFromRDD1.printSchema()
 val dfFromRDD2 = spark.createDataFrame(rdd).toDF(columns:_*)
 
 // Additional Imports
+import org.apache.spark.sql.types.ArrayType
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import org.apache.spark.sql.Row
 
