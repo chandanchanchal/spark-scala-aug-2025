@@ -26,4 +26,9 @@ val splits = rdd.randomSplit(Array(0.7, 0.3), seed = 11L)
 val training = splits(0).cache()
 val test = splits(1)
 
+val model = new LogisticRegressionWithLBFGS()
+  .setNumClasses(2)
+  .run(training)
+
+
 
