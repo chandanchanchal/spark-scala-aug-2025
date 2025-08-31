@@ -20,3 +20,5 @@ val data = Seq(
   LabeledPoint(0.0, Vectors.dense(19, 16000)),
   LabeledPoint(1.0, Vectors.dense(45, 100000))
 )
+val rdd = sc.parallelize(data)
+
