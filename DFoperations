@@ -4,10 +4,9 @@ import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import org.apache.spark.sql.Row
 import spark.implicits._
 
-import org.apache.spark.sql.Row
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.Row
 
-// schema
 val arrayStructureSchema = new StructType()
   .add("name", new StructType()
     .add("firstname", StringType)
@@ -16,6 +15,20 @@ val arrayStructureSchema = new StructType()
   .add("languages", ArrayType(StringType))
   .add("state", StringType)
   .add("gender", StringType)
+
+import org.apache.spark.sql.types._
+import org.apache.spark.sql.Row
+
+var arrayStructureSchema = new StructType()
+
+arrayStructureSchema = arrayStructureSchema.add("name", new StructType()
+  .add("firstname", StringType)
+  .add("middlename", StringType)
+  .add("lastname", StringType))
+
+arrayStructureSchema = arrayStructureSchema.add("languages", ArrayType(StringType))
+arrayStructureSchema = arrayStructureSchema.add("state", StringType)
+arrayStructureSchema = arrayStructureSchema.add("gender", StringType)
 
 // sample data
   val arrayStructureData = Seq(
@@ -27,12 +40,13 @@ val arrayStructureSchema = new StructType()
     Row(Row("Mike","Mary","Williams"),List("Python","VB"),"OH","M")
   )
 
-// create DF
 val rdd = spark.sparkContext.parallelize(arrayStructureData)
 val df = spark.createDataFrame(rdd, arrayStructureSchema)
 
 df.printSchema()
 df.show(false)
+
+
 
 
   // Condition
