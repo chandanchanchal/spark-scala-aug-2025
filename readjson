@@ -1,0 +1,4 @@
+//read multiline json file
+val multiline_df = spark.read.option("multiline","true")
+      .json("multiline-zipcode.json")
+multiline_df.show(false)  
