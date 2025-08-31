@@ -18,10 +18,14 @@ val arrayStructureSchema = new StructType()
   .add("gender", StringType)
 
 // sample data
-val arrayStructureData = Seq(
-  Row(Row("James", "", "Smith"), Seq("Java", "Scala"), "CA", "M"),
-  Row(Row("Anna", "Rose", ""), Seq("Spark", "Python"), "NY", "F")
-)
+  val arrayStructureData = Seq(
+    Row(Row("James","","Smith"),List("Java","Scala","C++"),"OH","M"),
+    Row(Row("Anna","Rose",""),List("Spark","Java","C++"),"NY","F"),
+    Row(Row("Julia","","Williams"),List("CSharp","VB"),"OH","F"),
+    Row(Row("Maria","Anne","Jones"),List("CSharp","VB"),"NY","M"),
+    Row(Row("Jen","Mary","Brown"),List("CSharp","VB"),"NY","M"),
+    Row(Row("Mike","Mary","Williams"),List("Python","VB"),"OH","M")
+  )
 
 // create DF
 val rdd = spark.sparkContext.parallelize(arrayStructureData)
