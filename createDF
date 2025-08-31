@@ -69,7 +69,7 @@ spark-shell --packages com.databricks:spark-xml_2.12:0.18.0
 val df = spark.read
   .format("com.databricks.spark.xml")
   .option("rowTag", "person")
-  .load("src/main/resources/persons.xml")
+  .load("resources/persons.xml")
 
 df.show()
 
