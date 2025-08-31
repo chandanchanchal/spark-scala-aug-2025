@@ -2,3 +2,21 @@ import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
+
+2. Create some sample data
+We’ll create a small dataset:
+Features: (age, income)
+Label: 1 = buys product, 0 = does not buy
+
+val data = Seq(
+  LabeledPoint(0.0, Vectors.dense(18, 15000)),  // young, low income
+  LabeledPoint(0.0, Vectors.dense(20, 18000)),
+  LabeledPoint(0.0, Vectors.dense(23, 25000)),
+  LabeledPoint(1.0, Vectors.dense(28, 40000)),  // older, mid income
+  LabeledPoint(1.0, Vectors.dense(35, 60000)),
+  LabeledPoint(1.0, Vectors.dense(40, 80000)),
+  LabeledPoint(0.0, Vectors.dense(22, 22000)),
+  LabeledPoint(1.0, Vectors.dense(30, 50000)),
+  LabeledPoint(0.0, Vectors.dense(19, 16000)),
+  LabeledPoint(1.0, Vectors.dense(45, 100000))
+)
