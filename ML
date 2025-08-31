@@ -35,6 +35,22 @@ val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
   (prediction, label)
 }
 
+val model: LogisticRegressionModel = new LogisticRegressionWithLBFGS().setNumClasses(2).run(training)
+val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
+  val prediction = model.predict(features)
+  (prediction, label)
+}
+
+val metrics = new MulticlassMetrics(predictionAndLabels)
+val accuracy = metrics.accuracy
+println(s"Model accuracy = $accuracy")
+
+
+
+val newCustomer = Vectors.dense(33, 55000)
+val prediction = model.predict(newCustomer)
+println(s"Prediction for customer(age=33, income=55000) = $prediction")
+
 
 
 
