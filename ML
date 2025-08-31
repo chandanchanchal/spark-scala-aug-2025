@@ -22,3 +22,8 @@ val data = Seq(
 )
 val rdd = sc.parallelize(data)
 
+val splits = rdd.randomSplit(Array(0.7, 0.3), seed = 11L)
+val training = splits(0).cache()
+val test = splits(1)
+
+
